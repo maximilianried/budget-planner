@@ -34,7 +34,6 @@ export default function BudgetCard({
         </Card.Title>
         {max && (
           <ProgressBar
-            className="rounded-pill"
             variant={getProgressBarVariant(amount, max)}
             min={0}
             max={max}
@@ -48,10 +47,10 @@ export default function BudgetCard({
               className="ms-auto"
               onClick={onAddExpenseClick}
             >
-              Add Expese
+              <i class="bi bi-plus-lg" />
             </Button>
             <Button onClick={onViewExpensesClick} variant="outline-secondary">
-              View Expeses
+              <i class="bi bi-search" />
             </Button>
           </Stack>
         )}

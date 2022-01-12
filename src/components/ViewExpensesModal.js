@@ -22,18 +22,7 @@ export default function ViewExpensesModal({ budgetId, handleClose }) {
       <Modal.Header closeButton>
         <Modal.Title>
           <Stack direction="horizontal" gap="2">
-            <div>Expenses - {budgets?.name}</div>
-            {budgetId !== UNCATEGORIZED_BUDGET_ID && (
-              <Button
-                onClick={() => {
-                  deleteBudget(budget);
-                  handleClose();
-                }}
-                variant="outline-danger"
-              >
-                Delete
-              </Button>
-            )}
+            <div>Expenses - {budget?.name}</div>
           </Stack>
         </Modal.Title>
       </Modal.Header>
@@ -41,7 +30,7 @@ export default function ViewExpensesModal({ budgetId, handleClose }) {
         <Stack direction="vertical" gap="3">
           {expenses.map((expense) => (
             <Stack direction="horizontal" gap="2" key={expense.id}>
-              <div className="me-auto fs-4">{expense.description}</div>
+              <div className="me-auto fs-5">{expense.description}</div>
               <div className="fs-5">
                 {currencyFormatter.format(expense.amount)}
               </div>
@@ -49,13 +38,28 @@ export default function ViewExpensesModal({ budgetId, handleClose }) {
                 onClick={() => deleteExpense(expense)}
                 size="sm"
                 variant="outline-danger"
+                style={{ marginLeft: "6px" }}
               >
-                &times;
+                <i class="bi bi-trash" />
               </Button>
             </Stack>
           ))}
         </Stack>
       </Modal.Body>
+      {budgetId !== UNCATEGORIZED_BUDGET_ID && (
+        <Modal.Footer>
+          <Button
+            onClick={() => {
+              deleteBudget(budget);
+              handleClose();
+            }}
+            variant="outline-danger"
+          >
+            <i class="bi bi-folder-x" style={{ marginRight: "8px" }} />
+            Delete {budget?.name}
+          </Button>
+        </Modal.Footer>
+      )}
     </Modal>
   );
 }
