@@ -6,11 +6,21 @@ export default function Setting() {
     <Container className="my-4">
       <Stack direction="horizontal" gap="2" className="mb-4">
         <h2 className="me-auto" style={{ fontWeight: "bold" }}>
-          Statistics
+          Settings
         </h2>
-        <Button variant="primary" onClick={() => window.location.reload()}>
-          <i className="bi bi-arrow-repeat" style={{ marginRight: "6px" }} />
-          Recompute
+        <Button variant="danger" onClick={() => window.location.reload()}>
+          <i
+            className="bi bi-exclamation-triangle"
+            style={{ marginRight: "6px" }}
+          />
+          Delete Data
+        </Button>
+        <Button
+          variant="outline-primary"
+          onClick={() => window.location.reload()}
+        >
+          <i className="bi bi-archive" style={{ marginRight: "6px" }} />
+          Export Data
         </Button>
       </Stack>
       <div
