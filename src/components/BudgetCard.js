@@ -47,10 +47,10 @@ export default function BudgetCard({
               className="ms-auto"
               onClick={onAddExpenseClick}
             >
-              <i class="bi bi-plus-lg" />
+              <i className="bi bi-plus-lg" />
             </Button>
             <Button onClick={onViewExpensesClick} variant="outline-secondary">
-              <i class="bi bi-search" />
+              <i className="bi bi-search" />
             </Button>
           </Stack>
         )}

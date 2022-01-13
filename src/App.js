@@ -7,6 +7,7 @@ import UncategorizedBudgetCard from "./components/UncategorizedBudgetCard";
 import { useState } from "react";
 import { UNCATEGORIZED_BUDGET_ID, useBudgets } from "./contexts/BudgetsContext";
 import TotalBudgetCard from "./components/TotalBudgetCard";
+import MainNavbar from "./components/MainNavbar";
 
 function App() {
   const [showAddBudgetModal, setShowAddBudgetModal] = useState(false);
@@ -22,19 +23,22 @@ function App() {
 
   return (
     <>
+      <MainNavbar />
       <Container className="my-4">
         <Stack direction="horizontal" gap="2" className="mb-4">
           <h2 className="me-auto" style={{ fontWeight: "bold" }}>
             Budgets
           </h2>
           <Button variant="primary" onClick={() => setShowAddBudgetModal(true)}>
-            Add Budget
+            <i className="bi bi-plus-lg" style={{ marginRight: "6px" }} />
+            Budget
           </Button>
           <Button
             variant="outline-primary"
             onClick={() => setShowAddExpenseModal(true)}
           >
-            Add Expense
+            <i className="bi bi-plus-lg" style={{ marginRight: "6px" }} />
+            Expense
           </Button>
         </Stack>
         <div
