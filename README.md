@@ -3,6 +3,7 @@
 Some parts are still under development but the app is fully functional <br>
 - Settings page is not working yet <br>
 - New charts getting added over time <br>
+- Searchbar gets added over time <br>
 
 ## Description
 
