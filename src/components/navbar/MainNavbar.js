@@ -3,10 +3,15 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 
 export default function MainNavbar() {
   return (
-    <Navbar bg="dark" variant="dark" className="sticky-top">
+    <Navbar
+      bg="dark"
+      variant="dark"
+      className="sticky-top"
+      style={{ marginBottom: "32px" }}
+    >
       <Container>
         <Navbar.Brand href="/">
-          <i class="bi bi-shield-lock" />
+          <i className="bi bi-shield-lock" />
         </Navbar.Brand>
         <Nav className="me-auto">
           <Nav.Link href="/">Budgets</Nav.Link>
