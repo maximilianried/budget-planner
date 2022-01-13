@@ -1,11 +1,20 @@
 import React from "react";
 import { Button, Container, Stack, Card } from "react-bootstrap";
 import { useBudgets } from "../../contexts/BudgetsContext";
-import { Bar, Doughnut, Bubble } from "react-chartjs-2";
-import Chart from "chart.js/auto";
+
+import BarChart from "./BarChart";
+import DoughnutChart from "./DoughnutChart";
 
 export default function Statistic() {
   const { budgets, getBudgetExpenses } = useBudgets();
+  const colorArray = [
+    "rgb(92, 184, 92)",
+    "rgb(91, 192, 222)",
+    "rgb(240, 173, 78)",
+    "rgba(255, 99, 132)",
+    "rgba(54, 162, 235)",
+    "rgba(255, 206, 86)",
+  ];
 
   var labelArray = budgets.map((budget) => {
     return budget.name;
@@ -38,65 +47,20 @@ export default function Statistic() {
             alignItems: "flex-start",
           }}
         >
-          <Card>
-            <Card.Body>
-              <Card.Title>Spendings</Card.Title>
-              <Card.Subtitle className="mb-2 text-muted">
-                Spendings per Budget
-              </Card.Subtitle>
-              <Card.Text>
-                <Bar
-                  data={{
-                    labels: labelArray,
-                    datasets: [
-                      {
-                        label: "Budgets",
-                        data: amountArray,
-                        backgroundColor: [
-                          "rgb(92, 184, 92)",
-                          "rgb(91, 192, 222)",
-                          "rgb(240, 173, 78)",
-                          "rgba(255, 99, 132)",
-                          "rgba(54, 162, 235)",
-                          "rgba(255, 206, 86)",
-                        ],
-                      },
-                    ],
-                  }}
-                />
-              </Card.Text>
-            </Card.Body>
-          </Card>
-
-          <Card>
-            <Card.Body>
-              <Card.Title>Combined</Card.Title>
-              <Card.Subtitle className="mb-2 text-muted">
-                All Budgets combined
-              </Card.Subtitle>
-              <Card.Text>
-                <Doughnut
-                  data={{
-                    labels: labelArray,
-                    datasets: [
-                      {
-                        label: "Budgets",
-                        data: amountArray,
-                        backgroundColor: [
-                          "rgb(92, 184, 92)",
-                          "rgb(91, 192, 222)",
-                          "rgb(240, 173, 78)",
-                          "rgba(255, 99, 132)",
-                          "rgba(54, 162, 235)",
-                          "rgba(255, 206, 86)",
-                        ],
-                      },
-                    ],
-                  }}
-                />
-              </Card.Text>
-            </Card.Body>
-          </Card>
+          <BarChart
+            title={"Spendings"}
+            description={"Spendings per Budget"}
+            label={labelArray}
+            amount={amountArray}
+            color={colorArray}
+          />
+          <DoughnutChart
+            title={"Combined"}
+            description={"All Budgets combined"}
+            label={labelArray}
+            amount={amountArray}
+            color={colorArray}
+          />
         </div>
       </Container>
     </>
