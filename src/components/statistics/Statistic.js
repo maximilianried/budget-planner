@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Container, Stack, Card } from "react-bootstrap";
+import { Button, Container, Stack } from "react-bootstrap";
 import { useBudgets } from "../../contexts/BudgetsContext";
 
 import BarChart from "./BarChart";
@@ -7,6 +7,7 @@ import DoughnutChart from "./DoughnutChart";
 
 export default function Statistic() {
   const { budgets, getBudgetExpenses } = useBudgets();
+
   const colorArray = [
     "rgb(92, 184, 92)",
     "rgb(91, 192, 222)",
