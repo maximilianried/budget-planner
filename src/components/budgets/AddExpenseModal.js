@@ -4,7 +4,7 @@ import { useRef } from "react";
 import {
   useBudgets,
   UNCATEGORIZED_BUDGET_ID,
-} from "../contexts/BudgetsContext";
+} from "../../contexts/BudgetsContext";
 
 export default function AddExpenseModal({
   show,

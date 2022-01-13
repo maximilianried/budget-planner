@@ -1,5 +1,5 @@
 import React from "react";
-import { useBudgets } from "../contexts/BudgetsContext";
+import { useBudgets } from "../../contexts/BudgetsContext";
 import BudgetCard from "./BudgetCard";
 
 export default function TotalBudgetCard() {
