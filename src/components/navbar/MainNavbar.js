@@ -5,7 +5,9 @@ export default function MainNavbar() {
   return (
     <Navbar bg="dark" variant="dark" className="sticky-top">
       <Container>
-        <Navbar.Brand href="/">🏦</Navbar.Brand>
+        <Navbar.Brand href="/">
+          <i class="bi bi-shield-lock" />
+        </Navbar.Brand>
         <Nav className="me-auto">
           <Nav.Link href="/">Budgets</Nav.Link>
           <Nav.Link href="/statistic">Statistics</Nav.Link>
