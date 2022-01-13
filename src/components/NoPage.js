@@ -8,7 +8,7 @@ export default function NoPage() {
         <h2 className="me-auto" style={{ fontWeight: "bold" }}>
           404
         </h2>
-        <Button variant="primary" href="/budget">
+        <Button variant="primary" href="/">
           <i className="bi bi-house" style={{ marginRight: "6px" }} />
           Back Home
         </Button>

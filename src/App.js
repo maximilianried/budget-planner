@@ -12,7 +12,7 @@ function App() {
       <MainNavbar />
       <BrowserRouter>
         <Routes>
-          <Route path="budget" element={<Budget />} />
+          <Route path="/" element={<Budget />} />
           <Route path="statistic" element={<Statistic />} />
           <Route path="setting" element={<Setting />} />
           <Route path="*" element={<NoPage />} />
