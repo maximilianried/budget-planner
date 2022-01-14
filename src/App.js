@@ -2,7 +2,7 @@ import React from "react";
 import MainNavbar from "./components/navbar/MainNavbar";
 import Budget from "./components/budgets/Budget";
 import Statistic from "./components/statistics/Statistic";
-import NoPage from "./components/NoPage";
+import NoPage from "./components/warnings//NoPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Setting from "./components/settings/Setting";
 

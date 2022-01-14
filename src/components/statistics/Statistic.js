@@ -1,9 +1,9 @@
 import React from "react";
 import { Button, Container, Stack } from "react-bootstrap";
 import { useBudgets } from "../../contexts/BudgetsContext";
-
 import BarChart from "./BarChart";
 import DoughnutChart from "./DoughnutChart";
+import NoContent from "../warnings/NoContent";
 
 export default function Statistic() {
   const { budgets, getBudgetExpenses } = useBudgets();
@@ -40,6 +40,11 @@ export default function Statistic() {
             Recompute
           </Button>
         </Stack>
+        <NoContent
+          indicator={labelArray}
+          title={"No Statistics to show"}
+          message={"Create a Budget on the Budgets Page first"}
+        />
         <div
           style={{
             display: "grid",

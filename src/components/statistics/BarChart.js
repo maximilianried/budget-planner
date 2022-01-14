@@ -4,6 +4,10 @@ import { Card } from "react-bootstrap";
 import Chart from "chart.js/auto";
 
 export default function BarChart({ title, description, label, amount, color }) {
+  if (label.length === 0) {
+    return null;
+  }
+
   return (
     <Card>
       <Card.Body>

@@ -11,6 +11,7 @@ import {
   useBudgets,
 } from "../../contexts/BudgetsContext";
 import TotalBudgetCard from "./TotalBudgetCard";
+import NoContent from "../warnings/NoContent";
 
 export default function Budget() {
   const [showAddBudgetModal, setShowAddBudgetModal] = useState(false);
@@ -43,6 +44,11 @@ export default function Budget() {
             Expense
           </Button>
         </Stack>
+        <NoContent
+          indicator={budgets}
+          title={"No Budgets created"}
+          message={"Create a Budget with Expenses first"}
+        />
         <div
           style={{
             display: "grid",

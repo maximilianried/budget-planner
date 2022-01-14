@@ -10,6 +10,10 @@ export default function DoughnutChart({
   amount,
   color,
 }) {
+  if (label.length === 0) {
+    return null;
+  }
+
   return (
     <Card>
       <Card.Body>
