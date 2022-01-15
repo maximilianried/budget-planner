@@ -1,5 +1,12 @@
 import React from "react";
-import { Button, Container, Stack } from "react-bootstrap";
+import {
+  Button,
+  Container,
+  Stack,
+  Card,
+  ListGroup,
+  Form,
+} from "react-bootstrap";
 
 export default function Setting() {
   return (
@@ -23,14 +30,19 @@ export default function Setting() {
           Export Data
         </Button>
       </Stack>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(500px, 1fr))",
-          gap: "1rem",
-          alignItems: "flex-start",
-        }}
-      ></div>
+      <Card>
+        <Card.Header style={{ fontWeight: "bold" }}>General</Card.Header>
+        <ListGroup variant="flush">
+          <ListGroup.Item>
+            Dark Mode
+            <Form.Check
+              type="switch"
+              id="custom-switch"
+              style={{ float: "right" }}
+            />
+          </ListGroup.Item>
+        </ListGroup>
+      </Card>
     </Container>
   );
 }
