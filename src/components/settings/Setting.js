@@ -9,6 +9,14 @@ import {
 } from "react-bootstrap";
 
 export default function Setting() {
+  const [darkMode, setDarkMode] = React.useState(
+    localStorage.getItem("darkMode") === "true"
+  );
+
+  React.useEffect(() => {
+    localStorage.setItem("darkMode", darkMode);
+  }, [darkMode]);
+
   return (
     <Container className="my-4">
       <Stack direction="horizontal" gap="2" className="mb-4">
@@ -39,6 +47,11 @@ export default function Setting() {
               type="switch"
               id="custom-switch"
               style={{ float: "right" }}
+              checked={darkMode}
+              onClick={() => {
+                setDarkMode(!darkMode);
+                window.location.reload();
+              }}
             />
           </ListGroup.Item>
         </ListGroup>
