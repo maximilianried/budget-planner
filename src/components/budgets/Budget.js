@@ -47,7 +47,7 @@ export default function Budget() {
         <NoContent
           indicator={budgets}
           title={"No Budgets created"}
-          message={"Create a Budget with Expenses first"}
+          message={"Create a Budget with the Button above"}
         />
         <div
           style={{

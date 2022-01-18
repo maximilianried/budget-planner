@@ -43,7 +43,9 @@ export default function Statistic() {
         <NoContent
           indicator={labelArray}
           title={"No Statistics to show"}
-          message={"Create a Budget on the Budgets Page first"}
+          message={
+            "Uncategorized expenses aren't visible here, create a budget first"
+          }
         />
         <div
           style={{
