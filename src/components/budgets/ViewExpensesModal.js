@@ -19,10 +19,10 @@ export default function ViewExpensesModal({ budgetId, handleClose }) {
 
   return (
     <Modal show={budgetId != null} onHide={handleClose}>
-      <Modal.Header closeButton>
+      <Modal.Header>
         <Modal.Title>
           <Stack direction="horizontal" gap="2">
-            <div>Expenses - {budget?.name}</div>
+            <div style={{ fontWeight: "bold" }}>Expenses - {budget?.name}</div>
           </Stack>
         </Modal.Title>
       </Modal.Header>
@@ -37,7 +37,7 @@ export default function ViewExpensesModal({ budgetId, handleClose }) {
               <Button
                 onClick={() => deleteExpense(expense)}
                 size="sm"
-                variant="outline-danger"
+                variant="danger"
                 style={{ marginLeft: "6px" }}
               >
                 <i class="bi bi-trash" />
@@ -45,21 +45,20 @@ export default function ViewExpensesModal({ budgetId, handleClose }) {
             </Stack>
           ))}
         </Stack>
-      </Modal.Body>
-      {budgetId !== UNCATEGORIZED_BUDGET_ID && (
-        <Modal.Footer>
+        {budgetId !== UNCATEGORIZED_BUDGET_ID && (
           <Button
             onClick={() => {
               deleteBudget(budget);
               handleClose();
             }}
-            variant="outline-danger"
+            variant="danger"
+            style={{ float: "right", marginTop: "22px" }}
           >
             <i class="bi bi-folder-x" style={{ marginRight: "8px" }} />
             Delete {budget?.name}
           </Button>
-        </Modal.Footer>
-      )}
+        )}
+      </Modal.Body>
     </Modal>
   );
 }

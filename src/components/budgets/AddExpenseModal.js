@@ -28,8 +28,8 @@ export default function AddExpenseModal({
   return (
     <Modal show={show} onHide={handleClose}>
       <Form onSubmit={handleSubmit}>
-        <Modal.Header closeButton>
-          <Modal.Title>New Expense</Modal.Title>
+        <Modal.Header>
+          <Modal.Title style={{ fontWeight: "bold" }}>New Expense</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form.Group className="mb-2" controlId="description">
@@ -58,7 +58,11 @@ export default function AddExpenseModal({
             </Form.Select>
           </Form.Group>
           <div className="d-flex justify-content-end">
-            <Button variant="primary" type="submit">
+            <Button
+              variant="primary"
+              type="submit"
+              style={{ marginTop: "14px" }}
+            >
               Add
             </Button>
           </div>
