@@ -1,7 +1,36 @@
 .dark {
-  background-color: #282828;
+  background-color: #161618;
+  color: white;
 }
 
 .dark h2 {
   color: white;
+}
+
+.dark .card {
+  background-color: rgb(34, 37, 41) !important;
+  color: rgb(233, 233, 233);
+}
+
+.dark .list-group-item {
+  background-color: rgb(43, 46, 51) !important;
+  color: rgb(233, 233, 233);
+}
+
+.dark .modal-content {
+  background-color: rgb(43, 46, 51) !important;
+}
+
+.dark .btn-close:hover {
+  color: white;
+}
+
+.dark .form-control {
+  background-color: rgb(34, 37, 41) !important;
+  color: rgb(233, 233, 233) !important;
+}
+
+.dark .form-select {
+  background-color: rgb(34, 37, 41) !important;
+  color: rgb(233, 233, 233) !important;
 }
