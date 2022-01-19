@@ -23,7 +23,10 @@ export default function Setting() {
         <h2 className="me-auto" style={{ fontWeight: "bold" }}>
           Settings
         </h2>
-        <Button variant="danger" onClick={() => window.location.reload()}>
+        <Button
+          variant="danger"
+          onClick={() => alert("This Feature isn't fully functional yet")}
+        >
           <i
             className="bi bi-exclamation-triangle"
             style={{ marginRight: "6px" }}
@@ -32,7 +35,7 @@ export default function Setting() {
         </Button>
         <Button
           variant="outline-primary"
-          onClick={() => window.location.reload()}
+          onClick={() => alert("This Feature isn't fully functional yet")}
         >
           <i className="bi bi-archive" style={{ marginRight: "6px" }} />
           Export Data
@@ -55,6 +58,13 @@ export default function Setting() {
             />
           </ListGroup.Item>
         </ListGroup>
+      </Card>
+      <Card style={{ marginTop: "22px" }}>
+        <Card.Body>
+          Maximilian Ried
+          <br />
+          Developed in Bonn
+        </Card.Body>
       </Card>
     </Container>
   );
